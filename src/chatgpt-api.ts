@@ -135,7 +135,7 @@ export class ChatGPTAPI {
    * @returns The response from ChatGPT
    */
   async sendMessage(
-    text: string,
+    text: any,
     opts: types.SendMessageOptions = {}
   ): Promise<types.ChatMessage> {
     const {
@@ -358,7 +358,7 @@ export class ChatGPTAPI {
     this._apiOrg = apiOrg
   }
 
-  protected async _buildMessages(text: string, opts: types.SendMessageOptions) {
+  protected async _buildMessages(text: any, opts: types.SendMessageOptions) {
     const { systemMessage = this._systemMessage } = opts
     let { parentMessageId } = opts
 
